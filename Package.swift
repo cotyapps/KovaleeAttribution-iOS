@@ -18,7 +18,7 @@ let package = Package(
 		)
     ],
     dependencies: [
-		.package(url: "https://github.com/cotyapps/Kovalee-iOS-SDK", branch: "sdk-spm-split"),
+		.package(url: "https://github.com/cotyapps/Kovalee-iOS-SDK", branch: "master"),
 		.package(url: "https://github.com/adjust/ios_sdk", from: Version(4, 33, 5))
     ],
     targets: [
