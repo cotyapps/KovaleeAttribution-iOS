@@ -9,13 +9,13 @@
 Pod::Spec.new do |spec|
   spec.name         = "KovaleeAttribution"
   spec.version      = "1.0.1"
-  spec.summary      = "A short description of KovaleeAttribution."
+  spec.summary      = "KovaleeAttribution automates users attribution."
   spec.description  = <<-DESC
   Measuring marketing effectiveness and understanding where your users come from can be tricky. KovaleeAttribution automates this process, making the identification a breeze.
   It's part of a broader project KovaleeSDK
                    DESC
 
-  spec.license      = "MIT"
+  spec.license        = { :type => 'MIT', :file => 'MIT-LICENSE' }
   spec.homepage     = "https://github.com/cotyapps/KovaleeAttribution-iOS"
   spec.author       = { "fto-k" => "fto@kovalee.app" }
 
