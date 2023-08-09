@@ -1,6 +1,7 @@
 import AdSupport
 import AppTrackingTransparency
 import Foundation
+import KovaleeSDK
 import KovaleeFramework
 import Adjust
 
@@ -21,7 +22,7 @@ extension AdjustConfiguration {
     }
 }
 
-class AdjustWrapperImpl: NSObject, AttributionManager {
+class AdjustWrapperImpl: NSObject, AttributionManager, Manager {
     init(
         configuration: AdjustConfiguration,
         attributionAdidCallback: @escaping (String?) -> Void
