@@ -25,6 +25,7 @@ extension AdjustConfiguration {
 class AdjustWrapperImpl: NSObject, AttributionManager, Manager {
     init(
         configuration: AdjustConfiguration,
+		externalId: String?,
         attributionAdidCallback: @escaping (String?) -> Void
     ) {
 		KLogger.debug("initializing Adjust")
@@ -40,6 +41,10 @@ class AdjustWrapperImpl: NSObject, AttributionManager, Manager {
         adjustConfig?.logLevel = KLogger.logLevel.adjustLogLevel()
         adjustConfig?.delayStart = 2.5
         adjustConfig?.delegate = self
+
+		if let externalId {
+			adjustConfig?.externalDeviceId = externalId
+		}
 
         Adjust.appDidLaunch(adjustConfig)
     }
@@ -85,7 +90,8 @@ extension AdjustWrapperImpl: AdjustDelegate {
 extension AttributionManager {
     static var test: AttributionManager {
         AdjustWrapperImpl(
-            configuration: .test,
+			configuration: .test,
+			externalId: nil,
 			attributionAdidCallback: { _ in }
         )
     }

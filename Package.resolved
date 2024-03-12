@@ -6,8 +6,17 @@
         "repositoryURL": "https://github.com/amplitude/Amplitude-Swift",
         "state": {
           "branch": null,
-          "revision": "8293ca0b09aac19b7c87f51ad0386590a066e71f",
-          "version": "0.4.14"
+          "revision": "35f253db41cf68d220390946c7ad7f344665d763",
+          "version": "1.3.6"
+        }
+      },
+      {
+        "package": "analytics-connector-ios",
+        "repositoryURL": "https://github.com/amplitude/analytics-connector-ios.git",
+        "state": {
+          "branch": null,
+          "revision": "e2ca17ac735bcbc48b13062484541702ef45153d",
+          "version": "1.0.3"
         }
       },
       {
@@ -23,9 +32,9 @@
         "package": "KovaleeSDK",
         "repositoryURL": "https://github.com/cotyapps/Kovalee-iOS-SDK",
         "state": {
-          "branch": null,
-          "revision": "35246866762956f48a0e905ccf79a59c50858698",
-          "version": "1.4.0"
+          "branch": "web2app",
+          "revision": "098102f59092e9bfb23d5a73bbeb8405de07679b",
+          "version": null
         }
       }
     ]

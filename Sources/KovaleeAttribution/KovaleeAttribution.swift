@@ -17,6 +17,7 @@ extension AttributionManagerCreator: Creator {
 				environment: configuration.environment.rawValue,
 				token: key
 			),
+			externalId: self.externalDevice,
 			attributionAdidCallback: {
 				self.attributionAdidCallback($0)
 			}
