@@ -27,6 +27,9 @@ let package = Package(
 			dependencies: [
 				.product(name: "KovaleeSDK", package: "Kovalee-iOS-SDK"),
 				.product(name: "Adjust", package: "ios_sdk")
+			],
+			resources: [
+				.copy("PrivacyInfo.xcprivacy"),
 			]
 		)
     ]
