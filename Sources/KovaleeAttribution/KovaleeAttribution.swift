@@ -3,7 +3,7 @@ import AppTrackingTransparency
 import KovaleeFramework
 import KovaleeSDK
 
-extension AttributionManagerCreator: Creator {
+extension AttributionManagerCreator: @retroactive Creator {
 	public func createImplementation(
 		withConfiguration configuration: Configuration,
 		andKeys keys: KovaleeKeys
