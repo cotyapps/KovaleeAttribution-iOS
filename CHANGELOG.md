@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.6] - 2024-09-23
+### :bug: Bug Fixes
+- [`b734268`](https://github.com/cotyapps/KovaleeAttribution-iOS/commit/b734268b158232f70ed05dff2f2af35d15a768d5) - fixed possible iOS 18 crash *(commit by [@fto-k](https://github.com/fto-k))*
+- [`0b6e8b9`](https://github.com/cotyapps/KovaleeAttribution-iOS/commit/0b6e8b9df03af6361d0511f379777a097ad4fb73) - silenced warning *(commit by [@fto-k](https://github.com/fto-k))*
+
+
 ## [1.2.5] - 2024-08-20
 ### :bug: Bug Fixes
 - [`b8356bd`](https://github.com/cotyapps/KovaleeAttribution-iOS/commit/b8356bdf134f32839eb23b27e2a9e48bd1840181) - fixed Adjust version in podspec *(commit by [@fto-k](https://github.com/fto-k))*
@@ -43,3 +49,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [1.2.3]: https://github.com/cotyapps/KovaleeAttribution-iOS/compare/1.2.2...1.2.3
 [1.2.4]: https://github.com/cotyapps/KovaleeAttribution-iOS/compare/1.2.3...1.2.4
 [1.2.5]: https://github.com/cotyapps/KovaleeAttribution-iOS/compare/1.2.4...1.2.5
+[1.2.6]: https://github.com/cotyapps/KovaleeAttribution-iOS/compare/1.2.5...1.2.6
