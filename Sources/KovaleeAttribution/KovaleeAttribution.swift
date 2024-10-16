@@ -58,7 +58,7 @@ extension Kovalee {
 	/// Retrieve the Adjust identifier value
 	///
 	/// - Returns: the Adjust identifier value
-	public static func getAttributionAdid() -> String? {
-		Self.shared.kovaleeManager?.getAttributionAdid()
+	public static func getAttributionAdid() async -> String? {
+		await Self.shared.kovaleeManager?.getAttributionAdid()
 	}
 }
