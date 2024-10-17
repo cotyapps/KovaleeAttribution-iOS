@@ -58,7 +58,7 @@ class AdjustWrapperImpl: NSObject, AttributionManager, Manager {
 		}
 	}
 
-	func sendConversionValue_SKA4(value: Int, coarseValue: String, completion: @escaping (Error?) -> Void) {
+	func sendConversionValue(value: Int, coarseValue: String, completion: @escaping (Error?) -> Void) {
 		Adjust.updateSkanConversionValue(value, coarseValue: coarseValue, lockWindow: false) { error in
 			completion(error)
 		}
