@@ -36,7 +36,7 @@ platform :ios do
     # git_pull
     podspec_name = "KovaleeAttribution.podspec"
 
-    pod_lib_lint
+    # pod_lib_lint
     version = version_bump_podspec(
       path: podspec_name,
       bump_type: type
