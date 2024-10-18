@@ -25,7 +25,7 @@ Pod::Spec.new do |spec|
   spec.swift_version    = '5.7'
   spec.source_files  = "Sources/KovaleeAttribution/*.swift"
 
-  spec.dependency "KovaleeSDK", ">= 1.12.0"
-  spec.dependency "Adjust", ">= 5.0.0"
+  spec.dependency "KovaleeSDK", "~> 1.12.0"
+  spec.dependency "Adjust", "~> 5.0.0"
 
 end
