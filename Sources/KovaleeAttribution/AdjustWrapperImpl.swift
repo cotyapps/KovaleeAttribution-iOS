@@ -4,6 +4,7 @@ import Foundation
 import KovaleeSDK
 import KovaleeFramework
 import AdjustSdk
+import StoreKit
 
 extension AdjustConfiguration.Environment {
 	var adjustEnvironment: String {
@@ -51,6 +52,10 @@ class AdjustWrapperImpl: NSObject, AttributionManager, Manager {
 	func getAttributionAdid() async -> String? {
 		await Adjust.adid()
 	}
+	
+	func getSDKVersion() async -> String? {
+		await Adjust.sdkVersion()
+	}
 
 	func promptTrackingAuthorization(completion: @escaping (ATTrackingManager.AuthorizationStatus) -> Void) {
 		Adjust.requestAppTrackingAuthorization { _ in
@@ -59,8 +64,20 @@ class AdjustWrapperImpl: NSObject, AttributionManager, Manager {
 	}
 
 	func sendConversionValue(value: Int, coarseValue: String, completion: @escaping (Error?) -> Void) {
-		Adjust.updateSkanConversionValue(value, coarseValue: coarseValue, lockWindow: false) { error in
-			completion(error)
+		if #available(iOS 16.1, *) {
+			SKAdNetwork
+				.updatePostbackConversionValue(
+					value,
+					coarseValue: SKAdNetwork.CoarseConversionValue(rawValue: coarseValue),
+					lockWindow: false
+				) { error in
+					completion(error)
+				}
+		} else {
+			// Fallback on earlier versions
+			Adjust.updateSkanConversionValue(value, coarseValue: coarseValue, lockWindow: false) { error in
+				completion(error)
+			}
 		}
 	}
 	
@@ -70,7 +87,10 @@ class AdjustWrapperImpl: NSObject, AttributionManager, Manager {
 
 extension AdjustWrapperImpl: AdjustDelegate {
 	func adjustAttributionChanged(_ attribution: ADJAttribution?) {
-//		self.attributionAdidCallback(attribution?.adid)
+		Task {
+			let adid = await self.getAttributionAdid()
+			self.attributionAdidCallback(adid)
+		}
 	}
 	
 	func adjustConversionValueUpdated(_ fineValue: NSNumber?, coarseValue: String?, lockWindow: NSNumber?) {
